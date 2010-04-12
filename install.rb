@@ -1,6 +1,5 @@
 require 'rbconfig'
 require 'find'
-require 'ftools'
 
 include Config
 
@@ -23,8 +22,8 @@ Dir.chdir("lib")
 
 Find.find("composite_primary_keys", "composite_primary_keys.rb") { |f|
   if f[-3..-1] == ".rb"
-    File::install(f, File.join($sitedir, *f.split(/\//)), 0644, true)
+    File.install(f, File.join($sitedir, *f.split(/\//)), 0644, true)
   else
-    File::makedirs(File.join($sitedir, *f.split(/\//)))
+    File.makedirs(File.join($sitedir, *f.split(/\//)))
   end
 }
