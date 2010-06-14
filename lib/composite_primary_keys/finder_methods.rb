@@ -25,7 +25,7 @@ module CompositePrimaryKeys
         def find_with_ids(*ids, &block)
           return to_a.find(&block) if block_given?
 
-          ids = ids.first if ids.last == nil
+          ids.pop if ids.last.nil?
 
           # if ids is just a flat list, then its size must = primary_key.length (one id per primary key, in order)
           # if ids is list of lists, then each inner list must follow rule above
