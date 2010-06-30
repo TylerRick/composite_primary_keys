@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
  
   s.add_development_dependency "rspec"
  
-  s.files        = Dir.glob("lib/**/*") + %w(README)
+  s.files        = Dir.glob("lib/**/*") + %w(README.txt README_DB2.txt)
   s.require_path = 'lib'
 end
