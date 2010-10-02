@@ -1,4 +1,8 @@
-== 3.0.0.0 2010-05-02
+== 3.0.1 2010-10-02
+* Integrated the fork of RISCfuture with patches by paranormal and joekhoobyar 
+  (who integrated some patches by femto113)
+
+== 3.0 2010-05-02
 
 * Port to Rails 3.0 and Ruby 1.9.2
 
