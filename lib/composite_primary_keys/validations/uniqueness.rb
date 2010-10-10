@@ -22,7 +22,7 @@ module ActiveRecord
           if record.composite?
             predicate = nil
             record.ids_hash.each do |key, value|
-              neq = relation.table[key].not(value)
+              neq = relation.table[key].not_eq(value)
               predicate = predicate ? predicate.and(neq) : neq
             end
             relation = relation.where(predicate)
@@ -31,7 +31,7 @@ module ActiveRecord
           end
         end
 
-        if relation.exists?
+        if relation.first
           record.errors.add(attribute, :taken, :default => options[:message], :value => value)
         end
       end
